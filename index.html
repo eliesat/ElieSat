@@ -1,9 +1,335 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Personal Page</title>
-  </head>
-  <body>
-    <h1>Hello, World! Welcome to my website.</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElieSat - Premium IPTV, CCcam & Panel Services</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(15, 23, 42, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #00d2ff;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #3a7bd5;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d2ff;
+        }
+
+        .btn-contact {
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: #fff !important;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0b0f19 100%);
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-secondary {
+            border: 2px solid #3a7bd5;
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #94a3b8;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #151f32;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00d2ff;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            color: #00d2ff;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .card ul li {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .card ul li i {
+            color: #00d2ff;
+            margin-right: 8px;
+        }
+
+        /* Contact Banner */
+        .contact-banner {
+            background: linear-gradient(135deg, #151f32, #1e293b);
+            margin: 0 8% 100px 8%;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+
+        .contact-banner h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #070a12;
+            color: #64748b;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="logo">ELIE<span>SAT</span></a>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#grid">PanelGrid</a></li>
+                <li><a href="#cccam">CCcam</a></li>
+                <li><a href="#iptv">IPTV</a></li>
+                <li><a href="#contact" class="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Ultimate Satellite & Streaming Solutions</h1>
+        <p>Your one-stop provider for high-speed CCcam servers, premium IPTV playlists, and custom management panels with ElieSatPanelGrid.</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn-primary">Explore Services</a>
+            <a href="#contact" class="btn-secondary">Get Support</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Core Services</h2>
+        <p class="section-subtitle">Reliable, fast, and continuous streaming with top-tier uptime.</p>
+
+        <div class="grid">
+            <!-- Service 1: ElieSatPanelGrid -->
+            <div class="card" id="grid">
+                <div class="card-icon"><i class="fa-solid fa-table-cells"></i></div>
+                <h3>ElieSatPanelGrid</h3>
+                <p>Advanced grid control panel designed to streamline line management, user access, and reseller network overview.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Easy User Management</li>
+                    <li><i class="fa-solid fa-check"></i> Real-time Monitoring</li>
+                    <li><i class="fa-solid fa-check"></i> Reseller Integration</li>
+                </ul>
+                <a href="#contact" class="btn-primary" style="display:inline-block; padding: 8px 20px; font-size:14px;">Access Panel</a>
+            </div>
+
+            <!-- Service 2: CCcam -->
+            <div class="card" id="cccam">
+                <div class="card-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                <h3>CCcam Server</h3>
+                <p>Ultra-fast card sharing servers delivering stable freeze-free decoding for all major satellite packages.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> 99.9% Server Uptime</li>
+                    <li><i class="fa-solid fa-check"></i> Low Ping & Fast Zapping</li>
+                    <li><i class="fa-solid fa-check"></i> Multi-Satellite Support</li>
+                </ul>
+                <a href="#contact" class="btn-primary" style="display:inline-block; padding: 8px 20px; font-size:14px;">Get Lines</a>
+            </div>
+
+            <!-- Service 3: IPTV -->
+            <div class="card" id="iptv">
+                <div class="card-icon"><i class="fa-solid fa-tv"></i></div>
+                <h3>IPTV Streaming</h3>
+                <p>Access thousands of live global TV channels, sports networks, and movie libraries in HD/4K quality.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> FHD & 4K Live Channels</li>
+                    <li><i class="fa-solid fa-check"></i> Updated VOD Movies & Series</li>
+                    <li><i class="fa-solid fa-check"></i> Multi-Device Support</li>
+                </ul>
+                <a href="#contact" class="btn-primary" style="display:inline-block; padding: 8px 20px; font-size:14px;">Subscribe Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section class="contact-banner" id="contact">
+        <h2>Ready to Get Started?</h2>
+        <p style="color: #94a3b8; margin-bottom: 25px;">Contact us today to request a free trial line, panel access, or subscription details.</p>
+        <a href="https://t.me" target="_blank" class="btn-primary"><i class="fa-brands fa-telegram"></i> Contact on Telegram</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ElieSat Services. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
